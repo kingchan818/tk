@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import GameDetial from '../components/GameDetial';
 import { connect, useDispatch, useSelector } from 'react-redux';
 import { loadGame } from '../action/gamesAction';
 import styled from 'styled-components';
@@ -16,23 +17,42 @@ const Home = () => {
     return (
         <GameList>
             <h2>Up Coming Game</h2>
+            <GameDetial />
             <Games>
                 {upcoming.map((games) => (
-                    <Game name={games.name} released={games.released} id={games.id} image={games.background_image} />
+                    <Game
+                        name={games.name}
+                        released={games.released}
+                        id={games.id}
+                        image={games.background_image}
+                        key={games.id}
+                    />
                 ))}
             </Games>
 
             <h2>Popular Game</h2>
             <Games>
                 {popular.map((games) => (
-                    <Game name={games.name} released={games.released} id={games.id} image={games.background_image} />
+                    <Game
+                        name={games.name}
+                        released={games.released}
+                        id={games.id}
+                        image={games.background_image}
+                        key={games.id}
+                    />
                 ))}
             </Games>
 
             <h2>New Games</h2>
             <Games>
                 {newGames.map((games) => (
-                    <Game name={games.name} released={games.released} id={games.id} image={games.background_image} />
+                    <Game
+                        name={games.name}
+                        released={games.released}
+                        id={games.id}
+                        image={games.background_image}
+                        key={games.id}
+                    />
                 ))}
             </Games>
         </GameList>
