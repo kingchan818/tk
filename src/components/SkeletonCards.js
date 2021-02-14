@@ -5,15 +5,15 @@ import GameList from './game';
 
 const SkeletonCard = () => {
     return (
-        <GameList>
+        <div className="gameList">
             <h2>Up Coming Game</h2>
-            <Games>
+            <div className="games">
                 {Array(10)
                     .fill()
                     .map((item, index) => (
                         <div className="cards">
                             <h3 key={index}>
-                                <Skeleton height={10} width={`20%`} />
+                                <Skeleton text-align={`center`} height={10} width={`20%`} />
                             </h3>
                             <p key={index}>
                                 <Skeleton height={10} width={`20%`} />
@@ -23,11 +23,10 @@ const SkeletonCard = () => {
                             </div>
                         </div>
                     ))}
-            </Games>
+            </div>
 
             <h2>Popular Game</h2>
-
-            <Games>
+            <div className="games">
                 {Array(10)
                     .fill()
                     .map((item, index) => (
@@ -43,10 +42,10 @@ const SkeletonCard = () => {
                             </div>
                         </div>
                     ))}
-            </Games>
+            </div>
 
             <h2>New Games</h2>
-            <Games>
+            <div className="games">
                 {Array(10)
                     .fill()
                     .map((item, index) => (
@@ -62,8 +61,8 @@ const SkeletonCard = () => {
                             </div>
                         </div>
                     ))}
-            </Games>
-        </GameList>
+            </div>
+        </div>
     );
 };
 
