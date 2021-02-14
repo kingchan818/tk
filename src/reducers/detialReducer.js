@@ -1,6 +1,7 @@
 const initialState = {
-    game: {},
-    screen: {},
+    game: { platforms: [] },
+    screen: { results: [] },
+    isLoading: true,
 };
 
 const detialReducder = (state = initialState, action) => {
@@ -10,6 +11,12 @@ const detialReducder = (state = initialState, action) => {
                 ...state,
                 game: action.payload.game,
                 screen: action.payload.screen,
+                isLoading: false,
+            };
+        case 'LOADING_DETIAL':
+            return {
+                ...state,
+                isLoading: true,
             };
         default:
             return { ...state };

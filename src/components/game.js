@@ -3,19 +3,24 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { useDispatch } from 'react-redux';
 import { loadDetail } from '../action/detialAction';
+import { Link } from 'react-router-dom';
+import { smallImage } from '../util';
 
 const Game = ({ name, released, image, id }) => {
+    const stringPathId = String(id);
     const dispatch = useDispatch();
-
     const loadDetialHandler = () => {
+        document.body.style.overflow = 'hidden';
         dispatch(loadDetail(id));
     };
 
     return (
-        <StyledGame onClick={loadDetialHandler}>
-            <h3>{name}</h3>
-            <p>{released}</p>
-            <img src={image} alt={name} />
+        <StyledGame layoutId={stringPathId} onClick={loadDetialHandler}>
+            <Link to={`/game/${id}`}>
+                <motion.h3 layoutId={`title ${stringPathId}}`}>{name}</motion.h3>
+                <p>{released}</p>
+                <motion.img layoutId={`image ${stringPathId}`} src={smallImage(image, 640)} alt={name} />
+            </Link>
         </StyledGame>
     );
 };
@@ -28,9 +33,11 @@ const StyledGame = styled(motion.div)`
     }
     text-align: center;
     border-radius: 1rem;
+    overflow: hidden;
 
     min-height: 30vh;
     box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
 `;
 
 export default Game;

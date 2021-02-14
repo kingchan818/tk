@@ -2,6 +2,10 @@ import axios from 'axios';
 import { gameDetialsURL, gameScreenURL } from '../api';
 
 export const loadDetail = (id) => async (dispatch) => {
+    dispatch({
+        type: 'LOADING_DETIAL',
+    });
+
     const detialData = await axios.get(gameDetialsURL(id));
     const screenData = await axios.get(gameScreenURL(id));
 
