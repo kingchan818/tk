@@ -122,7 +122,7 @@ const Detial = styled(motion.div)`
     width: 80%;
     border-radius: 1rem;
     padding: 2rem 20rem;
-    background: white;
+    background: ${(props) => props.theme.body};
     position: absolute;
     left: 10%;
     color: black;

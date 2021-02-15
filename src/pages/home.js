@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import GameDetial from '../components/GameDetial';
 import { connect, useDispatch, useSelector } from 'react-redux';
 import { loadGame } from '../action/gamesAction';
@@ -16,6 +16,8 @@ const Home = () => {
     useEffect(() => {
         dispatch(loadGame());
     }, [dispatch]);
+
+    //states
     const { popular, upcoming, newGames, searched, isLoading } = useSelector((state) => state.games);
 
     return (

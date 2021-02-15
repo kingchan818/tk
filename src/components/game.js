@@ -35,7 +35,7 @@ const StyledGame = styled(motion.div)`
     overflow: hidden;
 
     min-height: 30vh;
-    box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: ${(props) => props.theme.boxShadow};
     cursor: pointer;
 `;
 
