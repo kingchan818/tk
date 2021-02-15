@@ -6,17 +6,16 @@ import Nav from './components/Nav';
 import GlobalStyles, { lightTheme, darkTheme } from './components/GlobalStyle';
 import { ThemeProvider } from 'styled-components';
 function App() {
-    const [theme, setTheme] = useState('dark');
+    // theme State
+    const [theme, setTheme] = useState(true);
 
-    const themetoggle = () => {
-        theme === 'light' ? setTheme('dark') : setTheme('light');
-    };
-    const themeMode = theme === 'light' ? lightTheme : darkTheme;
+    const themeMode = theme ? lightTheme : darkTheme;
+
     return (
         <div className="App">
             <ThemeProvider theme={themeMode}>
                 <GlobalStyles />
-                <Nav />
+                <Nav setTheme={setTheme} theme={theme} />
                 <Route path={['/game/:id', '/']}>
                     <Home />
                 </Route>

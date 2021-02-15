@@ -13,11 +13,13 @@ export const darkTheme = {
 };
 
 const GlobalStyles = createGlobalStyle`
+    
     *{
         margin : 0;
         padding : 0;
         box-sizing : border-box;
     }
+    
     html{
         &::-webkit-scrollbar{
             width : 0.5rem;
@@ -28,38 +30,43 @@ const GlobalStyles = createGlobalStyle`
         &::-webkit-scrollbar-track {
         background: white;
         }
+        
     }
     body{
-        background-color: ${(props) => props.theme.body};
+        background: ${(props) => props.theme.body};
         font-family: 'Montserrat', sans-serif;
         width: 100%;
-        transition: all 0.5 ease;
+        transition: all 0.7s ease;
     }
+
 
     h1{
         color: ${(props) => props.theme.fontColor};
     }
+
     h2{
         font-size: 3rem;
         font-family: 'Abril Fatface',cursive;
         font-weight: lighter;
         color: ${(props) => props.theme.fontColor};
+        
     }
     h3{
         font-size:1.3rem;
         color:#333;
         padding:1.5rem 0rem;
-        color: ${(props) => props.theme.fontColor};
+        color: ${(props) => props.theme.fontColor};        
     }
     p{
         font-size: 1.2rem;
         line-height:200%;
         color: ${(props) => props.theme.fontColor};
-        
+                
     }
     a{
         text-decoration: none;
         color: ${(props) => props.theme.fontColor};
+        
     }
     img{
         display:block;
